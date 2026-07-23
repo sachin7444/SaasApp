@@ -1,6 +1,4 @@
-import { StringToBoolean } from 'class-variance-authority/types';
 import React from 'react'
-import Image from 'next/image'
 import Link from 'next/link';
 
     interface CompanionCardProps {
@@ -19,16 +17,13 @@ const CompanionCard = ({ id, name, topic, subject, duration,color}:
         <div className="flex justify-between items-center">
             <div className="subject-badge">{subject}</div>
             <button className="companion-bookmark">
-                <Image src="/icons/bookmark.svg" alt="bookmark"
-                    width={12.5} height={15} 
-                    />
+                <img src="/icons/bookmark.svg" alt="bookmark" width={13} height={15} />
             </button>
         </div>
         <h2 className="text-2xl font-bold">{name}</h2>
         <p className="text-sm">{topic}</p>
         <div className="flex items-center gap-2">
-            <Image src="/icons/clock.svg" alt="duration" width={13.5} height={13.5}
-             />
+            <img src="/icons/clock.svg" alt="duration" width={14} height={14} />
             <p className="text sm" >{duration} minutes</p>
             <Link href={`/companions/${id}`} className='w-full'>
                 <button className="btn-primary w-full justify-center">
