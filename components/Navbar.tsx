@@ -1,8 +1,12 @@
+"use client"
 import Link from 'next/link'
 import Image from 'next/image'
+import { SignInButton, UserButton, useUser } from '@clerk/nextjs'
 import NavItems from './NavItems'
 
 const Navbar = () => {
+  const { isSignedIn } = useUser()
+
   return (
     <nav className='navbar'>
         <Link href="/">
@@ -17,7 +21,13 @@ const Navbar = () => {
         </Link>
         <div className="flex items-center gap-8">
           <NavItems />
-          <p>Sign In</p>
+          {isSignedIn ? (
+            <UserButton />
+          ) : (
+            <SignInButton>
+              <button className="btn-signin">Sign In</button>
+            </SignInButton>
+          )}
         </div>
     </nav>
   )
