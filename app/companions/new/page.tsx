@@ -15,5 +15,5 @@ const NewCompanion = async () => {
     </main>
   )
 }
-
 export default NewCompanion
+
